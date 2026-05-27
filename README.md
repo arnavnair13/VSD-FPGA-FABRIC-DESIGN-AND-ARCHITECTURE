@@ -249,7 +249,7 @@ The VPR flow executes four sequential stages:
 3. **Routing** — determines signal paths between placed blocks
 4. **Analysis** — extracts timing, area, and power metrics from the final implementation
 
-![VPR Flow]("C:\Users\Admin\Downloads\vprdiagram.png")
+![VPR Flow](vprdiagram.png)
 
 ### VTR — Verilog to Routing
 
@@ -277,19 +277,19 @@ Results from the flow:
 
 **Critical Paths**
 
-![Critical Paths]("C:\Users\Admin\Downloads\vtr_flowcriticalpaths.png")
+![Critical Paths](vtr_flowcriticalpaths.png)
 
 **Net Statistics**
 
-![Nets]("C:\Users\Admin\Downloads\vtr_flownets.png")
+![Nets](vtr_flownets.png)
 
 **Logical Connections**
 
-![Logical Connections]("C:\Users\Admin\Downloads\vtr_flowlogicalconnections.png")
+![Logical Connections](vtr_flowlogicalconnections.png)
 
 **Routing Utilization**
 
-![Routing Utilization]("C:\Users\Admin\Downloads\vtr_flowroutingutilization.png")
+![Routing Utilization](vtr_flowroutingutilization.png)
 
 ### Post-Synthesis Simulation
 
@@ -301,9 +301,9 @@ Post-synthesis simulation in the VTR flow is equivalent to post-implementation s
 
 The netlist is then simulated in Vivado to confirm functional correctness.
 
-![Post-Synthesis Netlist 1]("C:\Users\Admin\Downloads\post_synthesisnet1.png")
-![Post-Synthesis Netlist 2]("C:\Users\Admin\Downloads\post_synthesisnet2.png")
-![Post-Synthesis Simulation](""C:\Users\Admin\Downloads\post_synthesissimulation.png"")
+![Post-Synthesis Netlist 1](post_synthesisnet1.png)
+![Post-Synthesis Netlist 2](post_synthesisnet2.png)
+![Post-Synthesis Simulation](post_synthesissimulation.png)
 
 ### Timing Analysis in VTR
 
@@ -321,7 +321,7 @@ VTR includes a built-in power estimation engine. Power analysis is activated usi
 -power -cmos_tech $VTR_ROOT/vtr_flow/tech/PTM_45nm/45nm.xml
 ```
 
-![VTR Power Report](C:\Users\Admin\Downloads\vtrpower.png)
+![VTR Power Report](vtrpower.png)
 
 ## Day 3 — RISC-V Core Implementation on Vivado
 
@@ -338,16 +338,16 @@ The RVMYTH RTL is structured around the following key modules:
 
 The instruction memory is loaded with a simple test program that computes the sum of integers from 1 to 9. The accumulating result is observable on the simulation waveforms.
 
-![RVMYTH Simulation](C:\Users\Admin\Downloads\mythsim.png)
+![RVMYTH Simulation](mythsim.png)
 
 Pin mapping is performed in the elaboration stage, assigning FPGA physical I/Os to the core's ports.
 
-![RVMYTH Elaboration](C:\Users\Admin\Downloads\elaborationmyth.png)
+![RVMYTH Elaboration](elaborationmyth.png)
 
 The design is synthesised targeting the Basys 3 Artix-7 device. Post-synthesis schematic and applied constraints are shown below.
 
-![RVMYTH Synthesis Schematic](C:\Users\Admin\Downloads\rvmythsynthsch.png)
-![RVMYTH Constraints](C:\Users\Admin\Downloads\d3_rvmyth_synth.png)
+![RVMYTH Synthesis Schematic](rvmythsynthsch.png)
+![RVMYTH Constraints](d3_rvmyth_synth.png)
 
 
 ### Synthesis to Bitstream
@@ -356,19 +356,19 @@ During implementation, the synthesised netlist is translated into FPGA-native pr
 
 **Implemented Design Fragment**
 
-![RVMYTH Implemented Design](images/day3/rvmyth_implementation.png)
+![RVMYTH Implemented Design](d3design.png)
 
 **Timing Summary**
 
-![RVMYTH Timing](images/day3/rvmyth_timing.png)
+![RVMYTH Timing](d3_rvmythtiming.png)
 
 **Device Utilization Summary**
 
-![RVMYTH Utilization](images/day3/rvmyth_utilization.png)
+![RVMYTH Utilization](d3designutilization.png)
 
 **Power Report**
 
-![RVMYTH Power](images/day3/rvmyth_power.png)
+![RVMYTH Power](d3designpower.png)
 
 ---
 
@@ -391,7 +391,7 @@ The specific fabric used in this workshop is **FPGA1212_QLSOFA_HD_PNR**, with th
 
 Resource utilization of the 4-bit counter mapped onto the SOFA fabric.
 
-![SOFA Counter Area](images/day4/sofa_counter_area.png)
+![SOFA Counter Area](d4_sofa_area.png)
 
 ---
 
