@@ -107,42 +107,70 @@ A **4-bit synchronous up-counter** with clock division logic is used as the refe
 
 ```verilog
 `timescale 1ns / 1ps
-// 4-bit up-counter with clock division
-// Source clock: 100 MHz
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 26.05.2026 21:16:08
+// Design Name: 
+// Module Name: counter_rtl
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
-module counter_clk_div(
-    input  clk,
-    input  rst,
-    output reg [3:0] counter_out
-);
 
-    reg        div_clk;
-    reg [25:0] delay_count;
+module counter_rtl(clk,rst,counter_out );
+input clk,rst;
+reg div_clk;
+reg [25:0] delay_count;
+output reg [3:0]counter_out;
 
-    // Clock division block
-    always @(posedge clk) begin
-        if (rst) begin
-            delay_count <= 26'd0;
-            div_clk     <= 1'b0;
-        end else begin
-            if (delay_count == 26'd212) begin
-                delay_count <= 26'd0;
-                div_clk     <= ~div_clk;
-            end else begin
-                delay_count <= delay_count + 1;
-            end
-        end
-    end
+////clock division block///
+//ider dekh delay count joh hai it counts the fast clock and jaise hi decimal mein 212 comes voh div
+//div clock ko toggle karega jisse kya create hua ek slow clock joh actual fast clock ke 212 ticks ke baad khudka reset karta vapis 212 ke baad khudka ek baar karta 
+always@(posedge clk)
+begin
+if(rst)
+begin
+delay_count <=26'b0;
+div_clk <=1'b0;
+counter_out<=4'b0000; //simulation purposes
+end 
+else
+if(delay_count==26'd212)
+begin
+delay_count<=26'b0;
+div_clk <= ~ div_clk;
+end
+else
+begin
+delay_count <= delay_count+1;
+end
+end
 
-    // 4-bit counter block
-    always @(posedge div_clk) begin
-        if (rst)
-            counter_out <= 4'b0000;
-        else
-            counter_out <= counter_out + 1;
-    end
-
+////4bit counter wala block //
+always@(posedge div_clk)
+begin
+if(rst)
+begin
+counter_out <=4'b0000;
+end
+else
+begin
+counter_out <= counter_out+1;
+end
+end
 endmodule
+
 ```
 
 
