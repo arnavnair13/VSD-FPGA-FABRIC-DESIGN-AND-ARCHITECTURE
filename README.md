@@ -75,9 +75,7 @@ An FPGA's internal structure is composed of four primary building blocks:
 - **I/O Cells** — interface the device with the outside world
 - **Block RAM / Memory** — dedicated on-chip storage
 
-![FPGA Architecture](images/day1/fpga_architecture.png)
-
----
+![FPGA Architecture](fpga_arch_1.png)
 
 ### Inside the Configurable Logic Block
 
@@ -87,15 +85,13 @@ The CLB is the fundamental unit of logic in an FPGA. Each CLB contains:
 - **Carry and Control Logic** — handles arithmetic chains efficiently
 - **Flip-Flops / Latches** — stores state for sequential logic
 
-![CLB Structure](images/day1/clb_structure.png)
-
----
+![CLB Structure](fpga_arch_2.png)
 
 ### Basys 3 Development Board
 
 The target hardware for this workshop is the **Basys 3 Artix-7 FPGA** board by Digilent. Key on-board elements include:
 
-![Basys3 Board](images/day1/basys3_board.png)
+![Basys3 Board](basys3_board.png)
 
 | No. | Description | No. | Description |
 |-----|-------------|-----|-------------|
@@ -108,7 +104,6 @@ The target hardware for this workshop is the **Basys 3 Artix-7 FPGA** board by D
 | 07 | Push Buttons | 15 | Power Select Switch |
 | 08 | Programming Done LED | 16 | JTAG Jumper |
 
----
 
 ### 4-bit Counter Design in Vivado
 
@@ -154,43 +149,38 @@ module counter_clk_div(
 endmodule
 ```
 
----
 
 ### Simulation and Elaboration
 
 **Behavioural simulation** verifies the functional correctness of the counter before synthesis. The waveform confirms proper counting and reset behaviour.
 
-![Counter Simulation Waveform](images/day1/counter_simulation.png)
+![Counter Simulation Waveform](d1_counter_div_sim.png)
 
 **Elaboration** resolves the design hierarchy — binding module instances, evaluating parameters, establishing net connectivity, and constructing the pre-synthesis model. The resulting schematic provides a gate-level view of the design prior to technology mapping.
 
-![Elaborated Schematic](images/day1/elaboration_schematic.png)
+![Elaborated Schematic](d1_counter_div_elaborate_schematic.png)
 
 I/O planning assigns RTL ports to physical FPGA pins.
 
-![I/O Planning](images/day1/io_planning.png)
+![I/O Planning](d1_counter_div_elaborate_io_planning.png)
 
----
 
 ### Synthesis
 
 Synthesis translates the RTL description into a technology-mapped gate-level netlist, optimised against a set of user-defined constraints.
 
-![Synthesis Schematic](images/day1/synthesis_schematic.png)
+![Synthesis Schematic](d1_counter_div_synthesis_schematic.png)
 
----
 
 ### Design Constraints
 
 Constraints communicate design requirements to the tool — including timing budgets, I/O pin assignments, clock definitions, and input/output delay specifications. They are typically supplied as an XDC file in Vivado.
 
----
 
 ### Bitstream Generation
 
 A bitstream is a binary configuration file that programs the FPGA's internal logic fabric and routing resources. Vivado generates this file as the final step of the implementation flow and it is downloaded directly onto the device.
 
----
 
 ### Timing, Power and Area Reports
 
@@ -198,23 +188,20 @@ After implementation, Vivado produces detailed post-route reports.
 
 **Timing Summary**
 
-![Timing Summary](images/day1/timing_summary.png)
+![Timing Summary](timing_summary.png)
 
 **Device Utilization**
 
-![Device Utilization](images/day1/device_utilization.png)
+![Device Utilization](implementation_utilization.png)
 
 **Power Analysis**
 
-![Power Analysis](images/day1/power_analysis.png)
+![Power Analysis](implementation_power.png)
 
----
 
 ### Virtual I/O (VIO) Core
 
 The **Virtual I/O (VIO)** IP core enables real-time monitoring and driving of internal FPGA signals without physical I/O pins. Both the number of ports and their widths are parameterizable, making it useful for in-system debug and verification.
-
----
 
 ## Day 2 — OpenFPGA, VPR and the VTR Framework
 
