@@ -399,8 +399,8 @@ Resource utilization of the 4-bit counter mapped onto the SOFA fabric.
 
 Setup and hold timing analysis for the counter on SOFA.
 
-![SOFA Counter Setup Timing](images/day4/sofa_counter_setup.png)
-![SOFA Counter Hold Timing](images/day4/sofa_counter_hold.png)
+![SOFA Counter Setup Timing](d4_sofa_timing_setup.png)
+![SOFA Counter Hold Timing](d4_sofa_timing_hold.png)
 
 ---
 
@@ -408,7 +408,7 @@ Setup and hold timing analysis for the counter on SOFA.
 
 Functional verification of the counter after implementation on the SOFA fabric.
 
-![SOFA Counter Post-Implementation](images/day4/sofa_counter_postimpl.png)
+![SOFA Counter Post-Implementation](d4_sofa_post_impl_sim.png)
 
 ---
 
@@ -416,7 +416,7 @@ Functional verification of the counter after implementation on the SOFA fabric.
 
 Power dissipation breakdown for the counter running on SOFA fabric.
 
-![SOFA Counter Power](images/day4/sofa_counter_power.png)
+![SOFA Counter Power](d4_sofa_power.png)
 
 ---
 
@@ -430,11 +430,11 @@ The **RVMYTH** RISC-V core is now targeted to the custom SOFA FPGA fabric. The c
 
 **Setup Timing Report**
 
-![SOFA RVMYTH Setup Timing](images/day5/sofa_rvmyth_setup.png)
+![SOFA RVMYTH Setup Timing](hehe1.png)
 
 **Hold Timing Report**
 
-![SOFA RVMYTH Hold Timing](images/day5/sofa_rvmyth_hold.png)
+![SOFA RVMYTH Hold Timing](hehe2.png)
 
 ---
 
@@ -442,18 +442,14 @@ The **RVMYTH** RISC-V core is now targeted to the custom SOFA FPGA fabric. The c
 
 Resource utilization of the RVMYTH core on the SOFA FPGA fabric.
 
-![SOFA RVMYTH Utilization 1](images/day5/sofa_rvmyth_util_1.png)
-![SOFA RVMYTH Utilization 2](images/day5/sofa_rvmyth_util_2.png)
-
----
+![SOFA RVMYTH Utilization 1](d5_area.png)
+![SOFA RVMYTH Utilization 2](d5_logic_elements.png)
 
 ### RVMYTH Post-Implementation on SOFA
 
 Post-implementation simulation confirms correct functional operation of the RVMYTH core on the SOFA fabric.
 
-![SOFA RVMYTH Post-Implementation](images/day5/sofa_rvmyth_postimpl.png)
-
----
+![SOFA RVMYTH Post-Implementation](d5_post_impl_sim.png)
 
 ## References
 
@@ -464,8 +460,6 @@ Post-implementation simulation confirms correct functional operation of the RVMY
 - [OpenFPGA Documentation](https://openfpga.readthedocs.io/en/master/)
 - [VPR Documentation](https://docs.verilogtorouting.org/en/latest/vpr/)
 - [VTR Documentation](https://docs.verilogtorouting.org/en/latest/vtr/)
-
----
 
 ## Acknowledgements
 
