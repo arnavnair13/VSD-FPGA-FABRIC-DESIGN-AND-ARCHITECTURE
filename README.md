@@ -3,7 +3,6 @@
 
 This repository documents the work carried out during the **FPGA — Fabric, Design and Architecture** workshop. The workflow is built around open-source EDA tools wherever possible, covering the full FPGA design cycle from RTL to bitstream.
 
----
 
 ## Table of Contents
 
@@ -44,13 +43,11 @@ This repository documents the work carried out during the **FPGA — Fabric, Des
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
 
----
 
 ## What is an FPGA?
 
 An **FPGA (Field Programmable Gate Array)** is a semiconductor device built around an array of programmable logic elements interconnected through a configurable routing fabric. Unlike fixed-function chips, FPGAs can be reprogrammed after manufacturing, making them ideal for rapid prototyping and iterative hardware development.
 
----
 
 ## FPGA vs ASIC — A Quick Comparison
 
@@ -62,7 +59,6 @@ An **FPGA (Field Programmable Gate Array)** is a semiconductor device built arou
 | Power Efficiency | Lower — higher overhead for the same function | Higher — purpose-built, minimal overhead |
 | Primary Use Case | Prototyping, validation, low-volume production | High-volume end products post-validation |
 
----
 
 ## Day 1 — FPGA Fundamentals and the Vivado Toolchain
 
@@ -215,7 +211,7 @@ Key capabilities:
 - Integrated self-testing and verification
 - Compatible with custom and standard FPGA architectures
 
-![OpenFPGA Framework]("C:\Users\Admin\Downloads\openfpga_framework.png")
+![OpenFPGA Framework](openfpga_framework.png)
 
 ### VPR — Versatile Place and Route
 
