@@ -228,9 +228,7 @@ Key capabilities:
 - Integrated self-testing and verification
 - Compatible with custom and standard FPGA architectures
 
-![OpenFPGA Framework](images/day2/openfpga_framework.png)
-
----
+![OpenFPGA Framework]("C:\Users\Admin\Downloads\openfpga_framework.png")
 
 ### VPR — Versatile Place and Route
 
@@ -251,9 +249,7 @@ The VPR flow executes four sequential stages:
 3. **Routing** — determines signal paths between placed blocks
 4. **Analysis** — extracts timing, area, and power metrics from the final implementation
 
-![VPR Flow](images/day2/vpr_flow.png)
-
----
+![VPR Flow]("C:\Users\Admin\Downloads\vprdiagram.png")
 
 ### VTR — Verilog to Routing
 
@@ -266,8 +262,6 @@ $VTR_ROOT/vtr_flow/scripts/run_vtr_flow.py \
   -temp_dir . \
   --route_chan_width 100
 ```
-
----
 
 ### Running the VTR Flow
 
@@ -283,21 +277,19 @@ Results from the flow:
 
 **Critical Paths**
 
-![Critical Paths](images/day2/critical_paths.png)
+![Critical Paths]("C:\Users\Admin\Downloads\vtr_flowcriticalpaths.png")
 
 **Net Statistics**
 
-![Nets](images/day2/nets.png)
+![Nets]("C:\Users\Admin\Downloads\vtr_flownets.png")
 
 **Logical Connections**
 
-![Logical Connections](images/day2/logical_connections.png)
+![Logical Connections]("C:\Users\Admin\Downloads\vtr_flowlogicalconnections.png")
 
 **Routing Utilization**
 
-![Routing Utilization](images/day2/routing_utilization.png)
-
----
+![Routing Utilization]("C:\Users\Admin\Downloads\vtr_flowroutingutilization.png")
 
 ### Post-Synthesis Simulation
 
@@ -309,10 +301,9 @@ Post-synthesis simulation in the VTR flow is equivalent to post-implementation s
 
 The netlist is then simulated in Vivado to confirm functional correctness.
 
-![Post-Synthesis Netlist](images/day2/post_synth_netlist.png)
-![Post-Synthesis Simulation](images/day2/post_synth_simulation.png)
-
----
+![Post-Synthesis Netlist 1]("C:\Users\Admin\Downloads\post_synthesisnet1.png")
+![Post-Synthesis Netlist 2]("C:\Users\Admin\Downloads\post_synthesisnet2.png")
+![Post-Synthesis Simulation](""C:\Users\Admin\Downloads\post_synthesissimulation.png"")
 
 ### Timing Analysis in VTR
 
@@ -322,16 +313,6 @@ Timing analysis requires a constraint file in SDC format, passed to VPR via:
 --sdc_file <path-to-sdc-file>
 ```
 
-**Setup Timing Report**
-
-![Setup Timing](images/day2/setup_timing.png)
-
-**Hold Timing Report**
-
-![Hold Timing](images/day2/hold_timing.png)
-
----
-
 ### Power Analysis in VTR
 
 VTR includes a built-in power estimation engine. Power analysis is activated using:
@@ -340,9 +321,7 @@ VTR includes a built-in power estimation engine. Power analysis is activated usi
 -power -cmos_tech $VTR_ROOT/vtr_flow/tech/PTM_45nm/45nm.xml
 ```
 
-![VTR Power Report](images/day2/vtr_power.png)
-
----
+![VTR Power Report](C:\Users\Admin\Downloads\vtrpower.png)
 
 ## Day 3 — RISC-V Core Implementation on Vivado
 
@@ -359,18 +338,17 @@ The RVMYTH RTL is structured around the following key modules:
 
 The instruction memory is loaded with a simple test program that computes the sum of integers from 1 to 9. The accumulating result is observable on the simulation waveforms.
 
-![RVMYTH Simulation](images/day3/rvmyth_simulation.png)
+![RVMYTH Simulation](C:\Users\Admin\Downloads\mythsim.png)
 
 Pin mapping is performed in the elaboration stage, assigning FPGA physical I/Os to the core's ports.
 
-![RVMYTH Elaboration](images/day3/rvmyth_elaboration.png)
+![RVMYTH Elaboration](C:\Users\Admin\Downloads\elaborationmyth.png)
 
 The design is synthesised targeting the Basys 3 Artix-7 device. Post-synthesis schematic and applied constraints are shown below.
 
-![RVMYTH Synthesis Schematic](images/day3/rvmyth_synth_schematic.png)
-![RVMYTH Constraints](images/day3/rvmyth_constraints.png)
+![RVMYTH Synthesis Schematic](C:\Users\Admin\Downloads\rvmythsynthsch.png)
+![RVMYTH Constraints](C:\Users\Admin\Downloads\d3_rvmyth_synth.png)
 
----
 
 ### Synthesis to Bitstream
 
